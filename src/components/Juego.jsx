@@ -121,12 +121,12 @@ buscarHistoria() {
   //Funcion para atender el evento del boton
   clickBoton(letra){
 
-    //Primero saber si la la historia termino
-    if(this.state.historiaActual.opciones.b == "FIN" || this.state.historiaActual.opciones.a == "FIN."){
+    //Primero saber si la la historia termino o aún no 
+    if(this.state.historiaActual.opciones.b === "FIN" || this.state.historiaActual.opciones.a === "FIN."){
       alert("Muchas gracias por jugar :)");
 
     }else{
-      // Cada que se presiona el boton, se aumenta la pagina
+      // Incremento página al apretar botón
       let auxPagina = this.state.pagina + 1;
 
       // Armar la nueva opcion elegida (opcionActual)
@@ -134,8 +134,8 @@ buscarHistoria() {
       
       // Guardar la letra actual en el historial
       let auxHistorialOpciones = this.state.historialOpciones;
-      // Descarto mi valor por defecto
-      if(this.state.ultimaOpcion != ""){
+      // Deja de lado valor default/por defecto
+      if(this.state.ultimaOpcion !== ""){
         auxHistorialOpciones.push(this.state.ultimaOpcion);
       }
 
